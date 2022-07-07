@@ -93,7 +93,7 @@ include 'tags.php';
                             $title = preg_replace('/[^\p{L}\p{N}\s]/u', '', $row['mv_name']);
                             $title = str_replace(" ", "-", $title);
                             ?>
-                            <a href="watch/<?php echo $row['id'] ?>/<?php echo $title ?>"><img src="thumb/the-big-bull-1617959152.jpg ?>" alt="img"></a>
+                            <a href="watch/<?php echo $row['id'] ?>/<?php echo $title ?>"><img src="thumb/<?php echo $row['cimg']; ?>" alt="img"></a>
                         </div>
                     </li>
             <?php
@@ -121,7 +121,7 @@ include 'tags.php';
                                 $title = preg_replace('/[^\p{L}\p{N}\s]/u', '', $row['mv_name']);
                                 $title = str_replace(" ", "-", $title);
                                 ?>
-                                <a href="watch/<?php echo $row['id']; ?>/<?php echo $title ?>"><img src="thumb/money-heist-season-2.jpg ?>" alt="image"></a>
+                                <a href="watch/<?php echo $row['id']; ?>/<?php echo $title ?>"><img src="thumb/<?php echo $row['img']; ?>" alt="image"></a>
                             </div>
                         </div>
                         <!-- ---------text------ -->
@@ -169,7 +169,7 @@ include 'tags.php';
                     $title = str_replace(" ", "-", $title);
                     ?>
                     <div class="movies-img" data-aos="fade-right" data-aos-duration="500">
-                        <a href="watch/<?php echo $row['id']; ?>/<?php echo $title ?>"><img src="thumb/box-office-sooryavanshi-is-stable-on-monday-001.jpg ?>" alt="image"></a>
+                        <a href="watch/<?php echo $row['id']; ?>/<?php echo $title ?>"><img src="thumb/<?php echo $row['img']; ?>" alt="image"></a>
                         <div class="quality">
                             <?php echo $row['quality1']; ?>
                         </div>
