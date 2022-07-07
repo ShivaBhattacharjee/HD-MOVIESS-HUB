@@ -1,0 +1,22 @@
+Options +FollowSymlinks
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*)$ $1.php
+
+# Return 404 if original request is .php
+RewriteCond %{THE_REQUEST} "^[^ ]* .*?\.php[? ].*$"
+RewriteRule .* - [L,R=404]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteRule ^watch/([0-9]+)$ viewmore?id=$1 [QSA,L] 
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteRule ^watch/([0-9]+)/([0-9a-zA-Z_-]+)$ viewmore?id=$1&title=$2 [QSA,L] 
+
+ErrorDocument 404 http://localhost/movieshub/error404
